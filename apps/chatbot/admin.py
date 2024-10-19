@@ -1,5 +1,6 @@
 from django.contrib import admin
-from chatbot.models import Sala, Message
+from apps.chatbot.models import Sala, Message
+from django.db import models
 
 class ListandoSala(admin.ModelAdmin):
     list_display = ('id', 'user', 'title', 'created_at',)
@@ -7,6 +8,7 @@ class ListandoSala(admin.ModelAdmin):
     search_fields = ('user', 'title')
     list_filter = ('user',)
     list_per_page = 10
+    
         
 class ListandoMessage(admin.ModelAdmin):
     list_display = ('id', 'user', 'created_at',)

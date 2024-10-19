@@ -1,0 +1,17 @@
+{% load static %}
+{% include 'partials/base.html' %}
+
+<body>
+    <div class="container">
+        <h1>Seu chat</h1>
+        <ul>
+            {% for s in salas %}
+            <h2><b>{{ s.title }}</b>:</h2>
+                {% for m in messages %}
+                    <h3><b>{{ m.user.first_name }}</b>: {{ m.text }}</h3>
+                {% endfor %}
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
